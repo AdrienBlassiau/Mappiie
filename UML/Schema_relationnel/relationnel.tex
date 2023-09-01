@@ -1,0 +1,66 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage[french]{babel}
+\usepackage[T1]{fontenc}
+\usepackage{eurosym}
+\usepackage{chngcntr}
+\usepackage[hmargin=2cm, vmargin=2cm]{geometry}
+\usepackage{graphicx}
+\usepackage{color}
+
+
+\title{Relationnel Mappiie}
+
+\begin{document}
+
+\maketitle
+
+\begin{itemize}
+
+\item \textbf{R\_Module}(\#\textcolor{green}{ id\_module}: \textcolor{blue}{ int}, \textcolor{green}{ libelle}: \textcolor{blue}{ varchar}) avec \textbf{R\_Module} IN \textbf{R\_UE}\\
+
+\item \textbf{R\_Semestre}(\#\textcolor{green}{ id\_sem}: \textcolor{blue}{ int})\\
+
+\item \textbf{R\_UE}(\#(\textcolor{green}{ id\_UE}: \textcolor{blue}{ int}, \textcolor{green}{ id\_module}$\Rightarrow$\textbf{R\_Module}), \textcolor{green}{ description}: \textcolor{blue}{ varchar}) avec \textcolor{green}{ id\_module} \textcolor{red}{NOT NULL}\\
+
+\item \textbf{R\_Caracteristiques}(\#\textcolor{green}{ id\_carac}: \textcolor{blue}{ int}, \textcolor{green}{ luminosite}: \textcolor{blue}{ int}, \textcolor{green}{ nb\_fenetres}: \textcolor{blue}{ int}, \textcolor{green}{ acceshand}: \textcolor{blue}{ int}, \textcolor{green}{ nb\_places}: \textcolor{blue}{ int}, \textcolor{green}{ proprete}: \textcolor{blue}{ int},\textcolor{green}{  id\_personne}$\Rightarrow$\textbf{R\_Personne}) avec \textcolor{green}{ id\_personne} \textcolor{red}{NOT NULL} \\
+
+\item \textbf{R\_Personne}(\#\textcolor{green}{ id\_personne}: \textcolor{blue}{ int}, \textcolor{green}{ nom}: \textcolor{blue}{ varchar}, \textcolor{green}{ prenom}: \textcolor{blue}{ varchar})       On fait un héritage par références\\
+
+\item \textbf{R\_Professeur}(\#(\textcolor{green}{ id\_personne}$\Rightarrow$\textbf{R\_Personne}))\\
+
+\item \textbf{R\_Eleve}(\#(\textcolor{green}{ id\_personne}$\Rightarrow$\textbf{R\_Personne}), \textcolor{green}{ pseudo}: \textcolor{blue}{ varchar},\textcolor{green}{ id\_groupe}$\Rightarrow$\textbf{R\_Groupe}) avec \textcolor{green}{  id\_groupe} \textcolor{red}{NOT NULL} \\
+
+\item \textbf{R\_Intervention}(\#\textcolor{green}{ id\_inter}: \textcolor{blue}{ int},\textcolor{green}{ date\_inter}: \textcolor{blue}{ timestamp},\textcolor{green}{ duree}: \textcolor{blue}{ int},type\{\textcolor{blue}{TP,TD,COURS},
+ \textcolor{green}{ id\_professeur}$\Rightarrow$\textbf{R\_Professeur},\textcolor{green}{ id\_salle}$\Rightarrow$\textbf{R\_Salle} \textcolor{green}{ id\_sem}$\Rightarrow$\textbf{R\_Semestre},\textcolor{green}{ id\_module}$\Rightarrow$\textbf{R\_Module}) avec \textcolor{green}{ id\_module} \textcolor{red}{NOT NULL}, \textcolor{green}{ id\_sem} \textcolor{red}{NOT NULL}, \textcolor{green}{ id\_professeur} \textcolor{red}{NOT NULL},\textbf{ R\_intervention} IN \textbf{R\_Cours}\\
+
+\item \textbf{R\_Compte}(\#\textcolor{green}{login}: \textcolor{blue}{ int}, \textcolor{green}{ mdp}: \textcolor{blue}{ varchar}, \textcolor{green}{ id\_personne}$\Rightarrow$\textbf{R\_Personne}) avec clé(\textcolor{green}{ id\_personne}$\Rightarrow$\textbf{R\_Personne})\\
+
+\item \textbf{R\_Etage}(\#\textcolor{green}{ num\_etage}: \textcolor{blue}{ int}) avec \textbf{R\_Etage} IN \textbf{R\_Salle}  \\
+
+\item \textbf{R\_Salle}(\#\textcolor{green}{ id\_salle}; \textcolor{blue}{ int},\textcolor{green}{ num\_etage}$\Rightarrow$\textbf{R\_Etage}, type\{\textcolor{blue}{ TP,TD,WC,AMPHI,LOCAL}\},\textcolor{green}{ id\_carac}$\Rightarrow$\textbf{R\_Caracteristique}) avec type(\textcolor{blue}{ \{LOCAL\}}) IN \textbf{R\_Association}, \textcolor{green}{ id\_carac} \textcolor{red}{NOT NULL}, \textcolor{green}{ num\_etage} \textcolor{red}{NOT NULL}        On fait un héritage par classe mère\\
+
+\item \textbf{R\_Association}(\#\textcolor{green}{ nom\_assoc}: \textcolor{blue}{ varchar},\textcolor{green}{  id\_prez}$\Rightarrow$\textbf{R\_Élève},\textcolor{green}{  id\_salle}$\Rightarrow$\textbf{R\_Salle}) avec \textcolor{green}{ id\_prez} \textcolor{red}{NOT NULL}\\
+
+
+\item \textbf{R\_Tableau}(\#(\textcolor{green}{ type\_tab}: \textcolor{blue}{ varchar}, \textcolor{green}{ type\_ecriture}: \textcolor{blue}{ varchar}, \textcolor{green}{ id\_carac}$\Rightarrow$\textbf{R\_Caracteristique}))\\
+
+\item \textbf{R\_Note}(\#(\textcolor{green}{ date\_note}: \textcolor{blue}{ timestamp},\textcolor{green}{ id\_personne}$\Rightarrow$\textbf{R\_Personne},\textcolor{green}{ id\_salle}$\Rightarrow$\textbf{R\_Salle}),\textcolor{green}{ note\_sur\_10}: \textcolor{blue}{ int}) avec \textcolor{green}{ id\_personne} \textcolor{red}{NOT NULL}, \textcolor{green}{ id\_salle} \textcolor{red}{NOT NULL} \\
+
+\item \textbf{R\_Reservation}(\#(\textcolor{green}{ date\_res}:\textcolor{green}{ int} \textcolor{blue}{ timestamp},\textcolor{green}{ id\_personne}$\Rightarrow$\textbf{R\_Personne},\textcolor{green}{ id\_salle}$\Rightarrow$\textbf{R\_Salle})) avec \textcolor{green}{ id\_personne} \textcolor{red}{NOT NULL},  \textcolor{green}{ id\_salle} \textcolor{red}{NOT NULL} \\
+
+\item \textbf{R\_Chemin}(\#(\textcolor{green}{ date\_chem}: \textcolor{blue}{ timestamp},\textcolor{green}{ id\_personne}$\Rightarrow$\textbf{R\_Personne},\textcolor{green}{ id\_salle}$\Rightarrow$\textbf{R\_Salle}),info\_chemin: int) avec \textcolor{green}{ id\_personne} \textcolor{red}{NOT NULL}, \textcolor{green}{ id\_salle} \textcolor{red}{NOT NULL} \\
+
+
+\item \textbf{R\_Groupe}(\#\textcolor{green}{id\_intervegroupe}: \textcolor{blue}{int}) avec \textbf{R\_Groupe} IN \textbf{R\_Cours}\\\\
+
+\item \textbf{R\_Cours}(\#(\textcolor{green}{id\_groupe}$\Rightarrow$\textbf{R\_Groupe},\textcolor{green}{id\_inter}$\Rightarrow$\textbf{R\_Intervention}))\\
+
+
+
+
+
+
+\end{itemize}
+
+\end{document}

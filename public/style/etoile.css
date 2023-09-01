@@ -1,0 +1,44 @@
+/*
+ * Css utilisé dans le formulaire notation avec étoiles
+ */
+
+.letoile {
+    font-size: 25px;
+    color: grey;
+    float: right;
+    vertical-align: 30px;
+    font-family: "STARS",arial,sans-serif;
+}
+
+.rating span {
+    line-height: 43px;
+    font-size: 20px;
+}
+
+.rating label:hover, .rating label:focus, .rating label:hover ~ label, .rating label:focus ~ label{
+    color: orange;
+}
+
+.etoile1:checked ~ .letoile1,
+
+.etoile2:checked ~ .letoile1,
+.etoile2:checked ~ .letoile2,
+
+.etoile3:checked ~ .letoile1,
+.etoile3:checked ~ .letoile2,
+.etoile3:checked ~ .letoile3,
+
+.etoile4:checked ~ .letoile1,
+.etoile4:checked ~ .letoile2,
+.etoile4:checked ~ .letoile3,
+.etoile4:checked ~ .letoile4,
+
+.etoile5:checked ~ .letoile1,
+.etoile5:checked ~ .letoile2,
+.etoile5:checked ~ .letoile3,
+.etoile5:checked ~ .letoile4,
+.etoile5:checked ~ .letoile5
+{
+    color: orange;
+}
+

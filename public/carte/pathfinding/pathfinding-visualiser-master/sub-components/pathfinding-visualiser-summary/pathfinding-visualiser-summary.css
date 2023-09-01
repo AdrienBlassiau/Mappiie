@@ -1,0 +1,30 @@
+/**
+ * pathfinding-visualiser <http://github.com/Tyriar/pathfinding-visualiser>
+ * Copyright 2015 Daniel Imms <http://www.growingwiththeweb.com>
+ * Released under the MIT license <http://github.com/Tyriar/pathfinding-visualiser/blob/master/LICENSE>
+ */
+:host {
+  display: block;
+  position: relative;
+}
+
+#container {
+  transition: top 1s cubic-bezier(.37,0,.21,1) 0s, visibility 0s linear 1s, opacity .2s linear;
+  position: relative;
+  top: 20em;
+  opacity: .9;
+  padding: 1em;
+  background-color: #FFF;
+}
+
+#container.exiting {
+  transition: top 1s cubic-bezier(.63,0,.79,1) 0s, visibility 0s linear 1s, opacity .2s linear;
+}
+
+#container.visible {
+  top: 0em;
+}
+
+#container:hover {
+  opacity: .6;
+}

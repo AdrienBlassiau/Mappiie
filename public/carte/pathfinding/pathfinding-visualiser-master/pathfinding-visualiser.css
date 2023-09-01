@@ -1,0 +1,31 @@
+/**
+ * pathfinding-visualiser <http://github.com/Tyriar/pathfinding-visualiser>
+ * Copyright 2014 Daniel Imms <http://www.growingwiththeweb.com>
+ * Released under the MIT license <http://github.com/Tyriar/pathfinding-visualiser/blob/master/LICENSE>
+ */
+:host {
+  display: block;
+  background-color: white;
+  color:#000;
+}
+
+#canvas {
+  width:100%;
+}
+
+#container {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background-color: #FFF;
+  /* This prevents the toggle button from going out of screen */
+  overflow: hidden;
+}
+
+#summary {
+  position: absolute;
+  bottom: 1em;
+  left: 1em;
+}

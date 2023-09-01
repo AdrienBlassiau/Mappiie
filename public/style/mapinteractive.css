@@ -1,0 +1,13 @@
+/*
+ * Css utilisé sur les canevas des cartes interactives
+ */
+
+canvas
+{
+	pointer-events: none;    
+	position:absolute;
+
+}
+.center {
+	display: block;
+}

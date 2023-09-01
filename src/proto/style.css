@@ -1,0 +1,106 @@
+body{
+	background-attachment:fixed;
+	background-color     :white;
+	background-image     : url("https://tpc.googlesyndication.com/simgad/9725077734916846880");
+	background-position  :right bottom;
+	background-repeat    :no-repeat;
+	color                :black;
+	font-size            :100%;
+
+	
+}
+
+p{
+	border-left   :solid 5px tomato;
+	border-radius : 0;
+	font-family   :courier;
+	font-size     :2vw;
+	font-style    :italic;
+	margin        :inherit;
+	outline       :solid 5px tomato;
+	outline-offset:1px;
+	/*color:tomato;
+	text-align:justify;
+	text-decoration:none;
+	text-transform:capitalize;
+	text-indent:30px;
+	letter-spacing:30px;
+	line-height:30px;
+	direction:rtl;
+	word-spacing:10px;*/
+	
+}
+
+a:link{
+	background-color:#FA6146FF;
+	color           :white;
+	cursor          :pointer;
+	padding         :30px;
+	text-decoration : none;
+}
+
+a:visited {
+	background-color:#FA6146FF;
+	color           :white;
+	cursor          :pointer;
+	padding         :30px;
+	text-decoration : none;
+}
+
+a:hover {
+	background-color:#F44336FF;
+	background-size :100px;
+	color           :white;
+	text-decoration : none;
+}
+
+a:active {
+	background-color:#F44336FF;
+	background-size :100px;
+	color           :white;
+	text-decoration : none;
+}
+
+ol{
+	background-color:#F1F1F1FF;
+	border-left     :4px solid red ;
+	list-style-type :none;
+	padding         :20px 30px;
+}
+table{
+	border-collapse: collapse;
+	width          :100%;
+}
+
+table, th, td{
+	border:none;	
+}
+
+th{
+	font-weight:bold;
+	height     :30px;
+	text-align :center;
+}
+
+th:hover{
+	background-color:#F1F1F1FF;
+}
+
+th{
+	background-color:#4AAA4EFF;
+	color           :white;
+}
+
+td{
+	padding   :20px;
+	text-align:left;
+}
+
+tr:nth-child(even){
+	background-color:#F1F1F1FF;
+}
+
+div{
+
+	overflow-x:auto;
+}

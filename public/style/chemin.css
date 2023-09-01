@@ -1,0 +1,69 @@
+/*
+ * Css utilisé dans le formulaire de selection des coordonnées de la carte
+ */
+
+.cbx
+	{
+		visibility:hidden;
+	}
+
+	label 
+	{
+		background-color: #425d77;
+		border:none;
+		padding:20px;
+		display:block;
+		border-radius: 8px;
+        width: 75%;
+        color: white;
+	}
+
+	input:checked + label {
+		background-color: #DE5E2D;
+	}
+
+	label:hover 
+	{
+		background: #34495e;
+		cursor:pointer;
+	}
+
+    .coord {
+        border:none;
+        position: relative;
+        left: 40px;
+        border-radius: 8px;
+        text-align: center;
+        width: 10ch;
+    }
+
+	ul {
+		background-color: #f3f3f3;
+		border: 1px solid #e7e7e7;
+		list-style-type: none;
+		margin: 0;
+		overflow: hidden;
+		padding: 0;		
+	}
+
+	li {
+		float: left;
+	}
+
+	li a {
+		color: #666;
+		display: block;		
+		padding: 14px 16px;
+		text-align: center;
+		text-decoration: none;
+	}
+
+	li a:hover:not(.active) {
+		background-color: #ddd;
+	}
+
+	li a.active {
+		background-color: #4CAF50;
+		color: white;
+
+	}

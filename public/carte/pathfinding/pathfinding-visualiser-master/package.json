@@ -1,0 +1,36 @@
+{
+  "name": "pathfinding-visualiser",
+  "version": "0.1.3",
+  "description": "A Polymer element that visualises various pathfinding algorithms",
+  "scripts": {
+    "coverage": "grunt coverage",
+    "test": "jasmine-node ./test/",
+    "serve": "polyserve"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Tyriar/pathfinding-visualiser.git"
+  },
+  "keywords": [
+    "algorithm",
+    "computer science",
+    "artificial intelligence",
+    "pathfinding",
+    "shortest path",
+    "A*",
+    "Djikstra"
+  ],
+  "author": "Daniel Imms (http://www.growingwiththeweb.com)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Tyriar/pathfinding-visualiser/issues"
+  },
+  "homepage": "https://github.com/Tyriar/pathfinding-visualiser",
+  "devDependencies": {
+    "grunt": "^0.4.5",
+    "grunt-eslint": "^17.0.0",
+    "grunt-jasmine-node-coverage": "^0.4.1",
+    "jasmine-node": "~1.14.3",
+    "polyserve": "^0.4.0"
+  }
+}
